@@ -17,4 +17,8 @@ public class NotCorrectEmailFormatException extends RuntimeException {
     public List<String> getErrors() {
         return new ArrayList<>(errors);
     }
+
+    public void clearErrors() {
+        errors.clear();
+    }
 }

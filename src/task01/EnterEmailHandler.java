@@ -6,6 +6,7 @@ public class EnterEmailHandler {
     private static NotCorrectEmailFormatException notCorrectEmailFormatException = new NotCorrectEmailFormatException();
 
     public static String getEmail(Scanner scanner) {
+        notCorrectEmailFormatException.clearErrors();
         System.out.println("Enter email [min 5 characters, should contain '@', should not start or end with '@']:");
         String result = scanner.nextLine();
         if (result.length() < 5) {
