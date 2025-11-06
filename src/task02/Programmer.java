@@ -1,5 +1,8 @@
 package task02;
 
+import task02.exception.ProgrammerBusyException;
+import task02.exception.ProgrammerUnavailableNowException;
+
 public class Programmer {
     private String name;
     private Status status;
@@ -22,10 +25,10 @@ public class Programmer {
     }
 
     public String doWork(String taskMsg) {
-        if (status.equals(Status.BUSY)) {
+        if (status == Status.BUSY) {
             throw new ProgrammerBusyException(String.format("%s is busy with other task", name));
         }
-        if (status.equals(Status.UNAVAILABLE)) {
+        if (status == Status.UNAVAILABLE) {
             throw new ProgrammerUnavailableNowException(String.format("%s is unavailable", name));
         }
         return String.format("%s is doing task: %s", name, taskMsg.toUpperCase());

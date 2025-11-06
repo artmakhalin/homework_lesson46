@@ -1,4 +1,4 @@
-package task02;
+package task02.exception;
 
 public class ProgrammerUnavailableNowException extends RuntimeException {
     public ProgrammerUnavailableNowException(String message) {
